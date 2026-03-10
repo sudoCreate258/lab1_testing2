@@ -3,12 +3,14 @@ import random as ran
 
 def get_input(flag=True):
   max_, min_ = 20, -21
-  elst = list(range(max_,  min_,2))) #even
-  olst = list(range(max_+1,min_,2))) #odd
+  elst = list(range(min_,  max_,2)) #even
+  olst = list(range(min_+1,max_,2)) #odd
   brkn_per = ran.randint(0,101)
 
-  options = [0 if brkn_per < 50 == 0 else 1, ran.choice(elst), ran.choice(olst)]
-  type = [int(), float(), str()]
+  options = [0               if brkn_per < 50     else 1, 
+            ran.choice(olst) if brkn_per > 50     else ran.choice(elst),
+            ran.choice(elst) if brkn_per % 2 == 0 else ran.choice(olst),]
+  type = [int, float, str]
   lst = ['f','f','f']
   
   if not flag:
@@ -30,4 +32,3 @@ def print_commits():
 
 def test_and_plot():
   pass
-  
