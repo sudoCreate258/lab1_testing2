@@ -7,7 +7,7 @@ def get_input(flag=True):
   olst = list(range(min_+1,max_,2)) #odd
   brkn_per = ran.randint(0,101)
 
-  options = [0               if brkn_per < 50     else 1, 
+  options = [0               if brkn_per < 30     else 1, 
             ran.choice(olst) if brkn_per > 50     else ran.choice(elst),
             ran.choice(elst) if brkn_per % 2 == 0 else ran.choice(olst),]
   type = [int, float, str]
