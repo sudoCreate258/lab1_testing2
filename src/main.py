@@ -1,7 +1,7 @@
-import get_input, log_output from util
+from util import get_input, log, test_and_plot, print_commits
 
 # TODO - (INPUT) receive variable input - step 1
-
+print(get_input())
 
 # TODO - (PROCESS) sanitize variable input - step 2
 
@@ -16,6 +16,7 @@ import get_input, log_output from util
 
 
 # TODO - (OUTPUT) test and plot graph - step 6
-
+test_and_plot()
 
 # TODO - (OUTPUT) print commits - step 7
+print_commits()
