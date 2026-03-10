@@ -1,5 +1,14 @@
 # DO NOT UPDATE CODE BELOW THIS LINE
 import random as ran
+import subprocess as sp
+import logging as lg
+from test import test_coeff
+
+lg.basicConfig(level=logging.INFO)
+log = lg.getLogger(__name__)
+
+def test_and_plot(cf, root_s):
+  flag = test_coeff()
 
 def get_input(flag=True):
   max_, min_ = 20, -21
@@ -23,12 +32,3 @@ def get_input(flag=True):
       lst[i] = t(o)
       
   return tuple(lst)
-
-def log_output():
-  pass
-
-def print_commits():
-  pass
-
-def test_and_plot():
-  pass
