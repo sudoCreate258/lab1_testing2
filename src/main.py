@@ -16,3 +16,6 @@ import get_input, log_output from util
 
 
 # TODO - (OUTPUT) test and plot graph - step 6
+
+
+# TODO - (OUTPUT) print commits - step 7
