@@ -17,6 +17,3 @@ print(get_input())
 
 # TODO - (OUTPUT) test and plot graph - step 6
 test_and_plot()
-
-# TODO - (OUTPUT) print commits - step 7
-print_commits()
