@@ -1,4 +1,4 @@
-from util import get_input, log, test_and_plot, log_commits
+from util import get_input, log, test_and_plot
 
 # TODO - (INPUT) receive variable input - step 1
 print(get_input())
@@ -17,6 +17,3 @@ print(get_input())
 
 # TODO - (OUTPUT) test and plot graph - step 6
 test_and_plot()
-
-# TODO - (OUTPUT) print commits - step 7
-log_commits()
