@@ -6,3 +6,6 @@ def get_input(flag=True):
     print()
   else:
     print()
+
+def log_output():
+  pass
