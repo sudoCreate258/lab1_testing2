@@ -42,6 +42,7 @@ def test_and_plot(cf, root_s):
   flag = test_coeff(cf,root_s)
   if flag:
     r1,r2 = root_s
+    a,b,c = cf
 
     mid = -b / (2 * a)
     offset = 12 if abs(r1 - r2) > 1.5 else 12
