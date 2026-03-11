@@ -55,5 +55,5 @@ def test_and_plot(cf, root_s):
 
     log.info(f"graph complete see {fn}")
   else:
-    log.info(f"cannot graph {cf} produces {root_s}")
+    log.warn(f"cannot graph {cf} produces {root_s}")
 
