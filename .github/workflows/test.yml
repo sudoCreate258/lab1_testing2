@@ -61,7 +61,7 @@ jobs:
 
       - name: Show log output
         run: |
-          if [ -f logs/run.log ]; then
+          if [ -f logs/lab1_test2.log ]; then
             echo "---- LOG OUTPUT ----"
             cat logs/lab1_test2.log
           else
