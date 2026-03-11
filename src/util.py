@@ -64,7 +64,7 @@ def test_and_plot(cf, root_s):
     fname = f"lab1_test2-{str(cf)}.png"
     plt.savefig(fname, dpi=300)
 
-    log.info(f"graph complete see {fn}")
+    log.info(f"graph complete see {fname}")
   else:
     log.warn(f"cannot graph {cf} produces {root_s}")
 
