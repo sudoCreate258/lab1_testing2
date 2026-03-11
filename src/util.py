@@ -42,7 +42,7 @@ def get_input(flag=True):
   return tuple(lst)
 
 def test_and_plot(cf, root_s):
-  flag, (r1,r2) = test_coeff((cf,root_s))
+  flag, (r1,r2) = test_coeff(cf,root_s)
   if flag:
     plt.scatter([r1, r2], [0, 0], s=120, color='red', edgecolors='black', zorder=5)
     offset = 12 if abs(r1 - r2) > 1.5 else 12
