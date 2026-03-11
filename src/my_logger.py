@@ -1,10 +1,11 @@
-import logging as lg
+import logging
 
-lg.basicConfig(
+logging.basicConfig(
     filename="logs/lab1_test2.log",
-    level=lg.INFO,
+    level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
     filemode="w"
 )
 
-log = lg.getLogger(__name__)
+log = logging.getLogger(__name__)
+log.info("Logger initialized")
