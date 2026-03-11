@@ -19,9 +19,25 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Create reports directory
+        run: |
+          mkdir -p reports
+
       - name: Run Code
         run: |
           export PYTHONPATH=src
-          python3 src/main.py 
+          python3 src/main.py
 
-# TODO - (OUTPUT) download summary - step 7 
+      - name: Show generated files
+        run: |
+          echo "---- REPORT FILES ----"
+          ls -l reports
+
+      - name: Show log output
+        run: |
+          if [ -f reports/run.log ]; then
+            echo "---- LOG OUTPUT ----"
+            cat reports/run.log
+          else
+            echo "No log file found"
+          fi
