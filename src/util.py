@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import sympy as sp
 from test import test_coeff
 
-lg.basicConfig(fileName='lab1_test2.log',level=lg.INFO)
+lg.basicConfig(filename='lab1_test2.log',level=lg.INFO)
 log = lg.getLogger(__name__)
 
 def get_input(flag=True):
