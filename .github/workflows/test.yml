@@ -17,7 +17,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          pip install matplotlib
+          pip install -r requirements.txt
 
       - name: Create reports directory
         run: |
