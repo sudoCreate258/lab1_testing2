@@ -1,7 +1,8 @@
 from util import get_input, log, test_and_plot
 
 # TODO - (INPUT) receive variable input - step 1
-print(get_input())
+my_input = get_input()
+xc_input = get_input(False)
 
 # TODO - (PROCESS) sanitize variable input - step 2
 
@@ -13,7 +14,8 @@ print(get_input())
 
 
 # TODO - (OUTPUT) standardize output using logger - step 5
-
+log.info(my_input)
+log.info(xc_input)
 
 # TODO - (OUTPUT) test and plot graph - step 6
-test_and_plot()
+test_and_plot(((1,-5,6),(2,3)))
