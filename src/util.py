@@ -5,10 +5,8 @@ import logging as lg
 import math
 import matplotlib.pyplot as plt
 import sympy as sp
+import log
 from test import test_coeff
-
-lg.basicConfig(filename='lab1_test2.log',level=lg.INFO)
-log = lg.getLogger(__name__)
 
 def get_input(flag=True):
   max_, min_ = 10, -11
