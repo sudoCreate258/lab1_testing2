@@ -6,7 +6,6 @@ jobs:
 tests:
 runs-on: ubuntu-24.04
 
-```
 steps:
   - name: Checkout code (full history)
     uses: actions/checkout@v4
@@ -84,4 +83,3 @@ steps:
         logs/
         graphs/
         reports/commit_info.txt
-```
