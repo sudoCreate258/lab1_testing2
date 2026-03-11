@@ -7,7 +7,7 @@ lg.basicConfig(
     filemode="w"
 )
 
-log = lg.getLogger(__name__)import logging as lg
+log = lg.getLogger(__name__)
 
 lg.basicConfig(filename='lab1_test2.log',level=lg.INFO)
 log = lg.getLogger(__name__)
