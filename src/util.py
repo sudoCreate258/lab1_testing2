@@ -61,7 +61,8 @@ def test_and_plot(cf, root_s):
     plt.axhline(0, color='black', linewidth=1)
     plt.grid(True)
     plt.show()
-    fname = f"graphs/lab1_test2_{"-".join(str(root_s).strip(")("))}.png"
+    mark = f"{str(root_s).split(",")}"
+    fname = f"graphs/lab1_test2_{"-".join(mark)}.png"
     plt.savefig(fname, dpi=300)
     plt.close()
 
