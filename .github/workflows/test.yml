@@ -44,8 +44,7 @@ jobs:
 
           echo "Detailed Commit History:" >> reports/commit_info.txt
           echo "" >> reports/commit_info.txt
-          git log --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s%n---" >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
+          git log --reverse --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage:%n%B%n---"          echo "" >> reports/commit_info.txt
 
           echo "Commit Graph:" >> reports/commit_info.txt
           git log --oneline --graph --decorate >> reports/commit_info.txt
