@@ -1,4 +1,4 @@
-import log
+from my_logger import log
 
 def test_coeff(cf,rts):
   if not rts:
