@@ -1,5 +1,5 @@
 from util import get_input, test_and_plot
-from log import log
+from my_logger import log
 
 # TODO - (INPUT) receive variable input - step 1
 my_input = get_input()
