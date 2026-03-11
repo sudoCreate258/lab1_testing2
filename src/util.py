@@ -4,7 +4,7 @@ import subprocess as sp
 import math
 import matplotlib.pyplot as plt
 import sympy as sp
-import log
+from my_logger import log
 from test import test_coeff
 
 def get_input(flag=True):
