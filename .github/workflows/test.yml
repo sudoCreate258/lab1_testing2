@@ -14,32 +14,52 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
 
-      - name: Create reports directory
+      - name: Create report directories
         run: |
+          mkdir -p logs
+          mkdir -p graphs
           mkdir -p reports
 
       - name: Run Code
         run: |
           export PYTHONPATH=src
           python3 src/main.py
-      
+
+      - name: Collect Git commit information
+        run: |
+          echo "Commit Hash:" > reports/commit_info.txt
+          git log -1 --pretty=format:"%H" >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+          echo "Commit Message:" >> reports/commit_info.txt
+          git log -1 --pretty=format:"%s" >> reports/commit_info.txt
+
       - name: Show generated files
         run: |
           echo "---- LOG FILES ----"
           ls -l logs || echo "No logs folder"
-      
+
           echo "---- GRAPH FILES ----"
           ls -l graphs || echo "No graphs folder"
+
       - name: Show log output
         run: |
           if [ -f logs/run.log ]; then
             echo "---- LOG OUTPUT ----"
-            cat logs/run.log
+            cat logs/lab1_test2.log
           else
             echo "No log file found"
           fi
+
+      - name: Upload artifact (logs + graphs + commit info)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-report
+          path: |
+            logs/
+            graphs/
+            reports/commit_info.txt
