@@ -18,4 +18,5 @@ log.info(my_input)
 log.info(xc_input)
 
 # TODO - (OUTPUT) test and plot graph - step 6
-test_and_plot(((1,-5,6),(2,3)))
+coef, outpt = (1,-5, 6), (2,3)
+test_and_plot(coef, outpt)
