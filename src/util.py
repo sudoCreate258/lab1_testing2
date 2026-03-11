@@ -1,7 +1,6 @@
 # DO NOT UPDATE CODE BELOW THIS LINE
 import random as ran
 import subprocess as sp
-import logging as lg
 import math
 import matplotlib.pyplot as plt
 import sympy as sp
