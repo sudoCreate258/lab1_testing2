@@ -1,2 +1,2 @@
-mathplotlib
+matplotlib
 sympy
