@@ -27,17 +27,19 @@ jobs:
         run: |
           export PYTHONPATH=src
           python3 src/main.py
-
+      
       - name: Show generated files
         run: |
-          echo "---- REPORT FILES ----"
-          ls -l reports
-
+          echo "---- LOG FILES ----"
+          ls -l logs || echo "No logs folder"
+      
+          echo "---- GRAPH FILES ----"
+          ls -l graphs || echo "No graphs folder"
       - name: Show log output
         run: |
-          if [ -f reports/run.log ]; then
+          if [ -f logs/run.log ]; then
             echo "---- LOG OUTPUT ----"
-            cat reports/run.log
+            cat logs/run.log
           else
             echo "No log file found"
           fi
