@@ -2,13 +2,13 @@
 import random as ran
 import subprocess as sp
 import logging as lg
+import math
+import matplotlib.pyplot as plt
+import sympy as sp
 from test import test_coeff
 
-lg.basicConfig(level=lg.INFO)
+lg.basicConfig(fileName='lab1_test2.log',level=lg.INFO)
 log = lg.getLogger(__name__)
-
-def test_and_plot(cf, root_s):
-  flag = test_coeff()
 
 def get_input(flag=True):
   max_, min_ = 10, -11
@@ -40,3 +40,23 @@ def get_input(flag=True):
       lst[i] = t(o)
       
   return tuple(lst)
+
+def test_and_plot(cf, root_s):
+  flag, (r1,r2) = test_coeff((cf,root_s))
+  if flag:
+    plt.scatter([r1, r2], [0, 0], s=120, color='red', edgecolors='black', zorder=5)
+    offset = 12 if abs(r1 - r2) > 1.5 else 12
+    plt.annotate(f"({r1:.1f}, 0)", (r1, 0), textcoords="offset points", xytext=(0, offset), ha='center')
+    plt.annotate(f"({r2:.1f}, 0)", (r2, 0), textcoords="offset points", xytext=(0, -18 if abs(r1-r2) < 1.5 else offset), ha='center')
+
+    plt.title(f"$f(x) = {latex_equation}$")
+    plt.axhline(0, color='black', linewidth=1)
+    plt.grid(True)
+    plt.show()
+    fname = f"lab1_test2-{str(cf)}.png"
+    plt.savefig(fn, dpi=300)
+
+    log.info(f"graph complete see {fn}")
+  else:
+    log.info(f"cannot graph {cf} produces {root_s}")
+
