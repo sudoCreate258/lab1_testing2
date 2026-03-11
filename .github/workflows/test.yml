@@ -15,9 +15,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Run Code
         run: |
-          pip install pytest
+          export PYTHONPATH=src
+          python3 src/main.py 
 
-      - name: Run tests
-        run: pytest -q
+# TODO - (OUTPUT) download summary - step 7 
