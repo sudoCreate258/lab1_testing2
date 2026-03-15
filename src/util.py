@@ -47,6 +47,7 @@ def test_and_plot(cf, root_s):
       err_log = f"{root_s}, {type(root_s)}, {e}"
       print(err_log)
       log.error(err_log)
+      exit()
     finally:
       a,b,c = cf
 
