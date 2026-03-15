@@ -41,10 +41,7 @@ def get_input(flag=True):
 def test_and_plot(cf, root_s):
   flag = test_coeff(cf,root_s)
   if flag:
-    try:
-      r1,r2 = root_s
-    except Exception as e:
-      log.error(root_s, type(root_s), e)
+    r1,r2 = root_s
     a,b,c = cf
 
     mid = -b / (2 * a)
