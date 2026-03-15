@@ -41,8 +41,10 @@ def get_input(flag=True):
 def test_and_plot(cf, root_s):
   flag = test_coeff(cf,root_s)
   if flag:
-    r1,r2 = root_s
-    a,b,c = cf
+    try:
+      r1,r2 = root_s
+    except Exception as e:
+      log.error(root_s, type(root_s), e)
 
     mid = -b / (2 * a)
     offset = 12 if abs(r1 - r2) > 1.5 else 12
