@@ -44,7 +44,11 @@ def test_and_plot(cf, root_s):
     try:
       r1,r2 = root_s
     except Exception as e:
-      log.error(root_s, type(root_s), e)
+      err_log = f"{root_s}, {type(root_s)}, {e}"
+      print(err_log)
+      log.error(err_log)
+    finally:
+      a,b,c = cf
 
     mid = -b / (2 * a)
     offset = 12 if abs(r1 - r2) > 1.5 else 12
