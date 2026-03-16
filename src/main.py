@@ -2,8 +2,7 @@ from util import get_input, test_and_plot
 from my_logger import log
 
 # TODO - (INPUT) receive variable input - step 1
-coef = get_input()
-#xc_input = get_input(False)
+coef = get_input(False)
 
 
 # TODO - (PROCESS) sanitize variable input - step 2
