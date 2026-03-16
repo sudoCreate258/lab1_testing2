@@ -6,11 +6,11 @@ def test_coeff(cf,rts):
 
     try:
       if single_rt_flag:
-        r1,r2 = root_s[0],0
+        r1,r2 = rts[0],0
       else:
-        r1,r2 = root_s[0], root_s[1]
+        r1,r2 = rts[0], root_s[1]
     except Exception as e:
-      err_log = f"{root_s[0]} {root_s[1]}, {cf} {type(root_s)}, {e}"
+      err_log = f"{rts[0]} {rts[1]}, {cf} {type(rts)}, {e}"
       print(err_log)
       log.error(err_log)
       exit()
