@@ -69,4 +69,3 @@ def test_and_plot(cf, root_s):
     log.info(f"graph complete for a,b,c={cf} and root(s)={root_s} in {fname}")
   else:
     log.warn(f"cannot graph {cf} produces {root_s}")
-
