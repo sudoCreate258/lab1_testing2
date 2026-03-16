@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -32,21 +34,25 @@ jobs:
 
       - name: Collect Git commit information
         run: |
-            echo "Git Commit History" > reports/commit_info.txt
-            echo "===================" >> reports/commit_info.txt
-            echo "" >> reports/commit_info.txt
-  
-            echo "Total commits in repository:" >> reports/commit_info.txt
-            git rev-list --count HEAD >> reports/commit_info.txt
-            echo "" >> reports/commit_info.txt
-  
-            echo "Detailed Commit History:" >> reports/commit_info.txt
-            echo "" >> reports/commit_info.txt
-            git log --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s%n---" >> reports/commit_info.txt
-            echo "" >> reports/commit_info.txt
-  
-            echo "Commit Graph:" >> reports/commit_info.txt
-            git log --oneline --graph --decorate >> reports/commit_info.txt
+          echo "Git Commit History Report" > reports/commit_info.txt
+          echo "=========================" >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+
+          echo "Repository:" >> reports/commit_info.txt
+          echo "${GITHUB_REPOSITORY}" >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+
+          echo "GitHub User:" >> reports/commit_info.txt
+          echo "${GITHUB_ACTOR}" >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+
+          echo "Total commits:" >> reports/commit_info.txt
+          git rev-list --count HEAD >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+
+          echo "Commit History (oldest -> newest):" >> reports/commit_info.txt
+          echo "" >> reports/commit_info.txt
+          git log --reverse --pretty=format:"%H %s" >> reports/commit_info.txt
 
       - name: Show generated files
         run: |
