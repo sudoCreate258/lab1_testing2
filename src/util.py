@@ -43,8 +43,8 @@ def test_and_plot(cf, root_s):
   if pass_flag:
     single_rt_flag = False
     try:
-      single_rt_flag = type(root_s) == tuple and len(root_s) == 2
-      r1,r2 = root_s if not single_rt_flag else root_s,0
+      single_rt_flag = type(root_s) == tuple and len(root_s) == 1
+      r1,r2 = root_s if not single_rt_flag else root_s,None
     except Exception as e:
       err_log = f"{root_s}, {cf} {type(root_s)}, {e}"
       print(err_log)
@@ -77,7 +77,7 @@ def test_and_plot(cf, root_s):
     plt.savefig(fname, dpi=300)
     plt.close()
 
-    log.info(f"graph complete see {fname}")
+    log.info(f"graph complete for a,b,c={cf} and root(s)={root_s} in {fname}")
   else:
     log.warn(f"cannot graph {cf} produces {root_s}")
 
