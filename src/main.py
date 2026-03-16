@@ -19,4 +19,4 @@ coef = get_input()
 #log.info(outpt)
 
 # TODO - (OUTPUT) test and plot graph - step 6
-test_and_plot(coef, "IDK")
+test_and_plot(coef, (1,2))
