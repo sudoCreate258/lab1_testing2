@@ -42,25 +42,17 @@ jobs:
           echo "${GITHUB_REPOSITORY}" >> reports/commit_info.txt
           echo "" >> reports/commit_info.txt
 
-          echo "Triggered by GitHub User:" >> reports/commit_info.txt
+          echo "GitHub User:" >> reports/commit_info.txt
           echo "${GITHUB_ACTOR}" >> reports/commit_info.txt
           echo "" >> reports/commit_info.txt
 
-          echo "Total commits in repository:" >> reports/commit_info.txt
+          echo "Total commits:" >> reports/commit_info.txt
           git rev-list --count HEAD >> reports/commit_info.txt
           echo "" >> reports/commit_info.txt
 
           echo "Commit History (oldest -> newest):" >> reports/commit_info.txt
           echo "" >> reports/commit_info.txt
-          git log --reverse --pretty=format:"Commit: %H%nAuthor: %an%nEmail: %ae%nDate: %ad%nMessage: %s%n---" >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
-
-          echo "Commit Graph:" >> reports/commit_info.txt
-          git log --oneline --graph --decorate >> reports/commit_info.txt
-
-          echo "" >> reports/commit_info.txt
-          echo "Contribution Summary:" >> reports/commit_info.txt
-          git shortlog -sn >> reports/commit_info.txt
+          git log --reverse --pretty=format:"%H %s" >> reports/commit_info.txt
 
       - name: Show generated files
         run: |
