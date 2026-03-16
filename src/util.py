@@ -41,12 +41,11 @@ def get_input(flag=True):
 def test_and_plot(cf, root_s):
   pass_flag = test_coeff(cf,root_s)
   if pass_flag:
-    single_rt_flag = False
+    single_rt_flag = type(root_s) == tuple and len(root_s) == 1
     try:
-      single_rt_flag = type(root_s) == tuple and len(root_s) == 1
-      r1,r2 = root_s[0],None if single_rt_flag else root_s[0], root_s[1]
+      r1,r2 = root_s[0],0 if single_rt_flag else root_s[0], root_s[1]
     except Exception as e:
-      err_log = f"{root_s}, {cf} {type(root_s)}, {e}"
+      err_log = f"{root_s[0]} {root_s[1]}, {cf} {type(root_s)}, {e}"
       print(err_log)
       log.error(err_log)
       exit()
