@@ -32,21 +32,21 @@ jobs:
 
       - name: Collect Git commit information
         run: |
-          echo "Git Commit History" > reports/commit_info.txt
-          echo "===================" >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
-
-          echo "Total commits in repository:" >> reports/commit_info.txt
-          git rev-list --count HEAD >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
-
-          echo "Detailed Commit History:" >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
-          git log --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s%n---" >> reports/commit_info.txt
-          echo "" >> reports/commit_info.txt
-
-          echo "Commit Graph:" >> reports/commit_info.txt
-          git log --oneline --graph --decorate >> reports/commit_info.txt
+            echo "Git Commit History" > reports/commit_info.txt
+            echo "===================" >> reports/commit_info.txt
+            echo "" >> reports/commit_info.txt
+  
+            echo "Total commits in repository:" >> reports/commit_info.txt
+            git rev-list --count HEAD >> reports/commit_info.txt
+            echo "" >> reports/commit_info.txt
+  
+            echo "Detailed Commit History:" >> reports/commit_info.txt
+            echo "" >> reports/commit_info.txt
+            git log --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s%n---" >> reports/commit_info.txt
+            echo "" >> reports/commit_info.txt
+  
+            echo "Commit Graph:" >> reports/commit_info.txt
+            git log --oneline --graph --decorate >> reports/commit_info.txt
 
       - name: Show generated files
         run: |
