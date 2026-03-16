@@ -43,7 +43,7 @@ def test_and_plot(cf, root_s):
   if pass_flag:
     single_rt_flag = False
     try:
-      single_rt_flag = type(rts) == tuple and len(rts) == 2
+      single_rt_flag = type(root_s) == tuple and len(root_s) == 2
       r1,r2 = root_s if not single_rt_flag else root_s,0
     except Exception as e:
       err_log = f"{root_s}, {cf} {type(root_s)}, {e}"
