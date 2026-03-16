@@ -2,7 +2,7 @@ from util import get_input, test_and_plot
 from my_logger import log
 
 # TODO - (INPUT) receive variable input - step 1
-my_input = get_input()
+coef = get_input()
 #xc_input = get_input(False)
 
 
@@ -16,7 +16,7 @@ my_input = get_input()
 
 
 # TODO - (OUTPUT) standardize output using logger - step 5
-log.info(outpt)
+#log.info(outpt)
 
 # TODO - (OUTPUT) test and plot graph - step 6
-test_and_plot(coef, outpt)
+test_and_plot(coef, "IDK")
