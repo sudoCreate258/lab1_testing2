@@ -43,7 +43,12 @@ def test_and_plot(cf, root_s):
   if pass_flag:
     single_rt_flag = type(root_s) == tuple and len(root_s) == 1
     try:
-      r1,r2 = root_s[0],0 if single_rt_flag else root_s[0], root_s[1]
+      if single_rt_flag:
+        print('line47')
+        r1,r2 = root_s[0],0
+      else:
+        print('line50')
+        r1,r2 = root_s[0], root_s[1]
     except Exception as e:
       err_log = f"{root_s[0]} {root_s[1]}, {cf} {type(root_s)}, {e}"
       print(err_log)
