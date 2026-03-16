@@ -27,5 +27,7 @@ def test_coeff(cf,rts):
       log.error(f"discriminent should be 0 for single root abc={cf},roots{rts}")
     elif not single_rt_flag and (b**2 - (4*a*c)) < 0:
       log.error(f"discriminent should be >0 for double root abc={cf},roots{rts}")
+    else:
+      return cf,True
 
-  return a,b,c
+  return cf, False
