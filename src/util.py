@@ -54,7 +54,7 @@ def test_and_plot(cf, root_s):
       a,b,c = cf
 
     mid = -b / (2 * a)
-    offset = 12 if abs(r1 - r2) > 1.5 else 12
+    offset = 12 if single_rt_flag else (12 if abs(r1 - r2) > 1.5 else 12) 
     x_vals = [i/10 for i in range(int((mid-10)*10), int((mid+10)*10))]
     y_vals = [a*(xi**2) + b*xi + c for xi in x_vals]
     
