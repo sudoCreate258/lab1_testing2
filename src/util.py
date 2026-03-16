@@ -52,6 +52,14 @@ def test_and_plot(cf, root_s):
       print(err_log)
       log.error(err_log)
       exit()
+      
+    try:
+      a/0
+    except Exception as e:
+      err_log = f"{cf}, {e}"
+      print(err_log)
+      log.error(err_log)
+      exit()
     finally:
       a,b,c = cf
 
