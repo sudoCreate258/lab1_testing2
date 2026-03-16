@@ -54,14 +54,13 @@ def test_and_plot(cf, root_s):
       exit()
       
     try:
+      a,b,c = cf
       a/0
     except Exception as e:
       err_log = f"{cf}, {e}"
       print(err_log)
       log.error(err_log)
       exit()
-    finally:
-      a,b,c = cf
 
     mid = -b / (2 * a)
     offset = 12 if single_rt_flag else (12 if abs(r1 - r2) > 1.5 else 12) 
