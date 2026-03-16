@@ -39,10 +39,12 @@ def get_input(flag=True):
   return tuple(lst)
 
 def test_and_plot(cf, root_s):
-  flag = test_coeff(cf,root_s)
-  if flag:
+  pass_flag = test_coeff(cf,root_s)
+  if pass_flag:
+    single_rt_flag = False
     try:
-      r1,r2 = root_s
+      single_rt_flag = type(rts) == tuple and len(rts) == 2
+      r1,r2 = root_s if not single_rt_flag else root_s,0
     except Exception as e:
       err_log = f"{root_s}, {cf} {type(root_s)}, {e}"
       print(err_log)
@@ -57,9 +59,12 @@ def test_and_plot(cf, root_s):
     y_vals = [a*(xi**2) + b*xi + c for xi in x_vals]
     
     plt.plot(x_vals, y_vals)
-    plt.scatter([r1, r2], [0, 0], s=120, color='red', edgecolors='black', zorder=5)
+    
+    plt.scatter([r1], [0], s=120, color='red', edgecolors='black', zorder=5)
     plt.annotate(f"({r1:.1f}, 0)", (r1, 0), textcoords="offset points", xytext=(0, offset), ha='center')
-    plt.annotate(f"({r2:.1f}, 0)", (r2, 0), textcoords="offset points", xytext=(0, -18 if abs(r1-r2) < 1.5 else offset), ha='center')
+    if not single_rt_flag:
+      plt.scatter([r1, r2], [0, 0], s=120, color='red', edgecolors='black', zorder=5)
+      plt.annotate(f"({r2:.1f}, 0)", (r2, 0), textcoords="offset points", xytext=(0, -18 if abs(r1-r2) < 1.5 else offset), ha='center')
 
     x_sym = sp.symbols('x')
     latex_equation = sp.latex(a*x_sym**2 + b*x_sym + c)
